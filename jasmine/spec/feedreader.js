@@ -55,7 +55,6 @@ $(function() {
             });
         
        
-
            
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -63,6 +62,15 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         
+          
+ it('changes visibility when menu icon is clicked', function() {
+    $('.menu-icon-link').click();
+        expect($('body').hasClass('menu-hidden')).toBe(false);
+
+    $('.menu-icon-link').click();
+        expect($('body').hasClass('menu-hidden')).toBe(true);   //when clicked expect menu to hide
+});
+
 
 
     /* TODO: Write a new test suite named "Initial Entries" */
