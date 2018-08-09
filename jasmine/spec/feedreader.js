@@ -78,9 +78,7 @@ $(function() {
 
 
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-
-        /* TODO: Write a test that ensures when the loadFeed
+         /* We'll write a test named "Initial Entries" that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
@@ -103,13 +101,30 @@ $(function() {
 
 
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
-
-        /* TODO: Write a test that ensures when a new feed is loaded
+         /* We'll write a test named "New Feed Selection" that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
 
+        describe('New Feed Selection', () => {
+
+          var oldFeed, newFeed;  //create two feeds for testing changes
+
+          beforeEach(function(done) {
+              loadFeed(0, function() {
+                  oldFeed = document.querySelector('.feed').innerHTML;
+              loadFeed(1, function() {
+                  newFeed = document.querySelector('.feed').innerHTML;
+              done();
+                });
+              });
+          });
       
+          it('if the content is changing', function (done){
+              expect(oldFeed).not.toBe(newFeed);    
+              done();
+          });
+
+        });
     }); 
 }());
