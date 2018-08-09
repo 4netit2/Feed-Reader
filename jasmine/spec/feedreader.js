@@ -19,7 +19,7 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();          //check if allFeeds array is defined
-            expect(allFeeds.length).not.toBe(0);     //check if contains something
+            expect(allFeeds.length).not.toBe(0);     //check if array contains something
         });
 
 
@@ -49,36 +49,32 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
-
-        /* TODO: Write a test that ensures the menu element is
+        /* This write a test named "The menu" that ensures the menu element is
          * hidden by default.
-         *  You'll have to analyze the HTML and
+         * We'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
 
-        describe('menu', function() {
+        describe('The menu', function() {
             it('hidden menu', function () {
-                expect($('body').hasClass('menu-hidden')).toBe(true);
+                expect($('body').hasClass('menu-hidden')).toBe(true);  //check if the menu is hidden by default if has a class
             });
 
 
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
+         /* We will test that the menu changes visibility when the menu icon is clicked.
+          * This test should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
 
+            it('changes visibility when menu icon is clicked', function() {
+                $('.menu-icon-link').click();
+                     expect($('body').hasClass('menu-hidden')).toBe(false);
 
- it('changes visibility when menu icon is clicked', function() {
-    $('.menu-icon-link').click();
-        expect($('body').hasClass('menu-hidden')).toBe(false);
-
-    $('.menu-icon-link').click();
-        expect($('body').hasClass('menu-hidden')).toBe(true);   //when clicked expect menu to hide
-});
+                $('.menu-icon-link').click();
+                     expect($('body').hasClass('menu-hidden')).toBe(true);   //when clicked expect menu to hide
+    });
 
 
 
@@ -91,9 +87,6 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-
-
-
         describe('Initial Entries', function() {
 
 
@@ -103,11 +96,10 @@ $(function() {
                 });
             });
 
-            it('is not empty', function() {
+            it('there is at least a single .entry element within the .feed container', function() {
                  expect($('.feed .entry').length).not.toBe(0);   //check if each entry has length
                 });
         });
-
 
 
 
