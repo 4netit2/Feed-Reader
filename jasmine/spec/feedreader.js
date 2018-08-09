@@ -27,7 +27,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it ('test if has a URL', function() {
+        it ('test if has an URL', function() {
             for (var check of allFeeds) {
                 expect(check.url).toBeDefined();        //for each feed we expect that url to be defined
                 expect(check.url.length).not.toBe(0);   //check that url is not empty
@@ -38,6 +38,14 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+        it ('test if a name exists', function() {
+            for (var check of allFeeds) {
+                expect(check.name).toBeDefined();        //for each feed we expect that a name to be defined
+                expect(check.name.length).not.toBe(0);   //check if the name is not empty
+            }
+        });
+
     });
 
 
