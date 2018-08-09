@@ -49,6 +49,11 @@ $(function() {
          * hiding/showing of the menu element.
          */
        
+        describe('menu', function() {
+            it('hidden menu', function () {
+                expect($('body').hasClass('menu-hidden')).toBe(true);
+            });
+        
        
 
            
@@ -79,5 +84,5 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        
+    });  
 }());
