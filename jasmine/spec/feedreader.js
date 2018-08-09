@@ -82,7 +82,23 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-       
+
+
+
+        describe('Initial Entries', function() {
+
+
+            beforeEach(function(done) {
+                loadFeed(0, () => {
+                    done();
+                });
+            });
+
+            it('is not empty', function() {
+                 expect($('.feed .entry').length).not.toBe(0);   //check if each entry has length
+                });
+        });
+
 
 
 
